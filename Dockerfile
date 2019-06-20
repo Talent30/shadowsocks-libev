@@ -15,7 +15,7 @@ RUN apk add --no-cache git build-base \
 
 FROM shadowsocks/shadowsocks-libev:edge
 # Copy v2ray-plugin
-USER root
+USER nobody
 COPY --from=golang /go/src/github.com/shadowsocks/v2ray-plugin/v2ray-plugin /usr/local/bin
 
 ENV SERVER_PORT 8388
