@@ -23,7 +23,7 @@ ENV PASSWORD PleaseChangeThis
 ENV METHOD xchacha20-ietf-poly1305
 ENV TIMEOUT 300
 ENV DNS_ADDRS 1.1.1.1
-ENV ARGS -u --reuse-port
+ENV ARGS -u -v
 
 COPY entrypoint.sh /entrypoint.sh
 
