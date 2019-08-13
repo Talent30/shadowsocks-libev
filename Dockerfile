@@ -15,9 +15,11 @@ RUN apk -U upgrade --no-cache \
 
 FROM shadowsocks/shadowsocks-libev:edge
 
+USER root
+
 RUN apk upgrade -U --no-cache
 # Copy v2ray-plugin
-USER nobody
+
 COPY --from=golang /go/src/github.com/shadowsocks/v2ray-plugin/v2ray-plugin /usr/local/bin
 
 ENV SERVER_PORT 8388
