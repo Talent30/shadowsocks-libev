@@ -4,7 +4,8 @@ ENV V2RAY_PLUGIN_VERSION v1.1.0
 ENV GO111MODULE on
 
 # Build v2ray-plugin
-RUN apk add --no-cache git build-base \
+RUN apk apk apk -U upgrade \
+    && apk add --no-cache git build-base \
     && mkdir -p /go/src/github.com/shadowsocks \
     && cd /go/src/github.com/shadowsocks \
     && git clone https://github.com/shadowsocks/v2ray-plugin.git \
