@@ -3,7 +3,7 @@ FROM golang:alpine AS golang
 ENV GO111MODULE on
 
 # Build v2ray-plugin
-RUN apk apk apk -U upgrade \
+RUN apk -U upgrade --no-cache \
     && apk add --no-cache git build-base \
     && mkdir -p /go/src/github.com/shadowsocks \
     && cd /go/src/github.com/shadowsocks \
