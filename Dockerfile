@@ -17,7 +17,7 @@ FROM shadowsocks/shadowsocks-libev:edge
 
 USER root
 
-RUN apk upgrade -U --no-cache
+RUN apk upgrade -U --no-cache \
 # Copy v2ray-plugin
 
 COPY --from=golang /go/src/github.com/shadowsocks/v2ray-plugin/v2ray-plugin /usr/local/bin
