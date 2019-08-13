@@ -1,5 +1,6 @@
 FROM golang:alpine AS golang
 
+ENV V2RAY_PLUGIN_VERSION v1.1.0
 ENV GO111MODULE on
 
 # Build v2ray-plugin
@@ -17,6 +18,7 @@ FROM shadowsocks/shadowsocks-libev:edge
 
 USER nobody
 # Copy v2ray-plugin
+RUN apk upgrade -U --no-cache
 
 COPY --from=golang /go/src/github.com/shadowsocks/v2ray-plugin/v2ray-plugin /usr/local/bin
 
